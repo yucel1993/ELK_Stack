@@ -31,7 +31,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "elk" {
   ami = data.aws_ami.ubuntu.id
   instance_type = "t2.large"
-  key_name = "webserver2try"
+  key_name = "your-pem-key-name"
   vpc_security_group_ids = [aws_security_group.elk-sg.id]
   root_block_device {
     volume_size = 16

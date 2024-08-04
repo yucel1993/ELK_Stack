@@ -32,7 +32,7 @@ data "aws_ami" "al2023" {
 resource "aws_instance" "elk" {
   ami = data.aws_ami.al2023.id
   instance_type = "t2.micro"
-  key_name = "webserver2try"
+  key_name = "Your pem key anme"
   vpc_security_group_ids = [aws_security_group.elk-sg.id]
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
   tags = {
